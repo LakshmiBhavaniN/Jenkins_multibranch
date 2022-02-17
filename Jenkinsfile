@@ -1,27 +1,9 @@
-library identifier: 'mylibraryname@main',
+library identifier: 'mylibraryname@master',
     retriever: modernSCM([
       $class: 'GitSCMSource',
       credentialsId: 'git_credentials', remote: 'https://github.com/lakshmiKrishnaa/vars.git'
 ])
 
-pipeline {
-    agent any
-
-    stages {
-        stage('git') {
-            steps {
-               git credentialsId: 'git_credentials', url: 'https://github.com/lakshmiKrishnaa/hello-world.git'
-            }
-        }
-        stage('build') {
-            steps {
-              bat "mvn clean install"
-              script{
-                    hello.info('Maven clean install is done')
-                }
-            }
-        }
-    }
-}
-
+@library ('mylibraryname@master') _
+pippline([:])
 
