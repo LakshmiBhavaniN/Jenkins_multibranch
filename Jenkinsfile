@@ -4,6 +4,6 @@ library identifier: 'mylibraryname@master',
       credentialsId: 'git_credentials', remote: 'https://github.com/lakshmiKrishnaa/vars.git'
 ])
 
-@library ('mylibraryname@master') _
+@Library ('mylibraryname@master') _
 pippline([:])
 
