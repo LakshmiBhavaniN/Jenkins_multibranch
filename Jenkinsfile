@@ -1,3 +1,9 @@
+library identifier: 'mylibraryname@main',
+    retriever: modernSCM([
+      $class: 'GitSCMSource',
+      credentialsId: 'git_credentials', remote: 'https://github.com/lakshmiKrishnaa/vars.git'
+])
+
 pipeline {
     agent any
 
@@ -6,6 +12,9 @@ pipeline {
 
             steps {
                   bat "mvn clean compile"
+                  script{
+                    hello.info('Maven clean install is done')
+                }
                  }
         }
 
