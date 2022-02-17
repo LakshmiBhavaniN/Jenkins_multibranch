@@ -1,26 +1,8 @@
-pipeline {
-    agent any
-
-    stages {
-        stage ('Compile Stage') {
-
-            steps {
-                  bat "mvn clean compile"
-                 }
-        }
-
-        stage ('Testing Stage') {
-
-            steps {
-                 bat "mvn test"
-                 }
-        }
+library identifier: 'mylibraryname@main',
+    retriever: modernSCM([
+      $class: 'GitSCMSource',
+      credentialsId: 'git_credentials', remote: 'https://github.com/lakshmiKrishnaa/vars.git'
+])
 
 
-        stage ('Package') {
-            steps {
-                 bat "mvn package"
-               }
-        }
-    }
-}
+
