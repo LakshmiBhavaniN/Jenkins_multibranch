@@ -4,5 +4,24 @@ library identifier: 'mylibraryname@main',
       credentialsId: 'git_credentials', remote: 'https://github.com/lakshmiKrishnaa/vars.git'
 ])
 
+pipeline {
+    agent any
+
+    stages {
+        stage('git') {
+            steps {
+               git credentialsId: 'git_credentials', url: 'https://github.com/lakshmiKrishnaa/hello-world.git'
+            }
+        }
+        stage('build') {
+            steps {
+              bat "mvn clean install"
+              script{
+                    hello.info('Maven clean install is done')
+                }
+            }
+        }
+    }
+}
 
 
