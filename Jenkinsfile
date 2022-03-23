@@ -8,9 +8,9 @@ pipeline {
 
             steps {
                   bat "mvn clean compile"
-                  script{
-                    hello.info('Maven clean install is done')
-                }
+               //   script{
+                 //   hello.info('Maven clean install is done')
+               // }
                  }
         }
 
