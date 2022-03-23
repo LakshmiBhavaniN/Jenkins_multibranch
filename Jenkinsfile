@@ -1,12 +1,8 @@
-library identifier: 'mylibraryname@main',
-    retriever: modernSCM([
-      $class: 'GitSCMSource',
-      credentialsId: 'git_credentials', remote: 'https://github.com/lakshmiKrishnaa/vars.git'
-])
-
 pipeline {
     agent any
-
+    tools {
+        maven 'MAVEN_HOME'
+    }
     stages {
         stage ('Compile Stage') {
 
