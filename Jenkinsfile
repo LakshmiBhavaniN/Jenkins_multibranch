@@ -6,10 +6,10 @@ library identifier: 'mylibraryname@main',
 
 pipeline {
     agent any
-      tools {
-      maven 'MAVEN_HOME'
+    //  tools {
+      //maven 'MAVEN_HOME'
 
-    }
+    //}
     stages {
         stage ('Compile Stage') {
 
